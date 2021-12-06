@@ -1,11 +1,8 @@
+import { TodoType } from "./types/TodoType";
 
-type TodoType = {
-  userId: number;
-  title: number;
-  completed?: boolean;
-};
 
-export const Todo = (props: TodoType) => {
+
+export const Todo = (props: Omit<TodoType, "id">) => {
   const { title, userId, completed = false } = props;
   const completeMark = completed ? "[完]" : "[未]";
   return(
